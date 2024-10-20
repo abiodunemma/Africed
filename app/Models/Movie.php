@@ -28,8 +28,8 @@ public function calculateAverageRating()
 {
     $averageRating = $this->reviews()->average('rating');
 
-    // Update the average_rating field in the movie table
-    $this->average_rating = $averageRating ?: 0; // Set to 0 if no reviews
+
+    $this->average_rating = $averageRating ?: 0; 
     $this->save();
 }
 

@@ -1,5 +1,5 @@
 @component('mail::message')
-# Reset Your Password
+
 
 You requested a password reset. Click the button below to reset your password:
 
@@ -9,6 +9,7 @@ Reset Password
 
 If you did not request a password reset, no further action is required.
 
-Thanks,<br>
+Thanks, Alot<br>
+<h4> Africred technical interview test </h4>
 {{ config('app.name') }}
 @endcomponent

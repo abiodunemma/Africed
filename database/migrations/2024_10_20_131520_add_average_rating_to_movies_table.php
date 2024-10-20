@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('movies', function (Blueprint $table) {
             Schema::table('movies', function (Blueprint $table) {
-                $table->decimal('average_rating', 3, 2)->default(0); // Allows for ratings like 4.50
+                $table->decimal('average_rating', 3, 2)->default(0);
             });
         });
     }

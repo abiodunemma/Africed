@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id'); // Add user_id column
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Optional: set up foreign key
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
             $table->unsignedBigInteger('movie_id'); // Add user_id column
-            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade'); // Optional: set up foreign key
+            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
             $table->integer('ratings');
             $table->string('comments');
             $table->timestamps();

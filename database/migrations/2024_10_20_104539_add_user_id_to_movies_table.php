@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->after('genre'); // Add user_id column
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Optional: set up foreign key
+            $table->unsignedBigInteger('user_id')->after('genre'); 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -23,8 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table->dropForeign(['user_id']); // Drop foreign key if you added one
-            $table->dropColumn('user_id'); // Drop the column
+            $table->dropForeign(['user_id']);
+            $table->dropColumn('user_id');
         });
     }
 };

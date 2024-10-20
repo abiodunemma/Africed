@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\API;
-use App\Models\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use App\Mail\UserRegistered;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+use App\Mail\UserRegistered;
+use App\Models\User;
 
 
 class AuthController extends Controller

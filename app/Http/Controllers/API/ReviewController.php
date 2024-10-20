@@ -80,10 +80,10 @@ class ReviewController extends Controller
     ]);
 
 
-    // Update the review
+   
     $review->update($validatedData);
 
-    // Calculate and update the average rating for the movie
+
     $review->movie->calculateAverageRating();
 
     return response()->json(['message' => 'Review updated successfully.'], 200);

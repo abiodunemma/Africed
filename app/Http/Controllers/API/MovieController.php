@@ -111,6 +111,7 @@ class MovieController extends Controller
         "data" => $movie
     ]);
     }
+
     public function destroy(Request $request, $id)
     {
         $movie = Movie::find($id);

@@ -1,66 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Movies Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Overview:
 
-## About Laravel
+The Movies project is a web application built using Laravel, designed to allow users to explore, rate, and review movies. The application utilizes Laravel Passport for authentication, providing a secure API for user registration, login, and access to movie-related features.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Features
+User Authentication:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Secure user registration and login using Laravel Passport.
+Password reset functionality with email notifications.
+Movie Management:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Users can view a list of movies with details such as title, description, and average rating.
+Users can add reviews and ratings for each movie, with a maximum rating of 5.
+Average Rating Calculation:
 
-## Learning Laravel
+The application automatically calculates and updates the average rating for each movie based on user reviews, ensuring the rating is always current.
+RESTful API:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The application provides a RESTful API that allows for easy integration with front-end frameworks or mobile applications.
+Technologies Used
+Laravel: The core framework for building the application, providing a robust structure and tools for rapid development.
+Laravel Passport: Used for API authentication, allowing secure access to user-related functionalities.
+MySQL: The database system used to store user, movie, and review data.
+Mailtrap: Used for testing email functionalities during development.
+Getting Started
+To run the Movies project locally, follow these steps:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Clone the repository:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+bash
+Copy code
+git clone https://github.com/abiodunemma/Africed.git
+cd movies
+Install dependencies:
 
-## Laravel Sponsors
+bash
+Copy code
+composer install
+Set up your .env file by copying the example file:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+bash
+Copy code
+cp .env.example .env
+Configure the .env file with your database and mail settings.
 
-### Premium Partners
+Generate the application key:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+bash
+Copy code
+php artisan key:generate
+Run the migrations to set up the database:
 
-## Contributing
+bash
+Copy code
+php artisan migrate
+Seed the database with sample data (optional):
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+bash
+Copy code
+php artisan db:seed
+Start the Laravel development server:
 
-## Code of Conduct
+bash
+Copy code
+php artisan serve
+You can now access the application at http://127.0.0.1:8000.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+API Documentation
+The API endpoints are designed to be intuitive and follow RESTful conventions. Below are some key endpoints:
 
-## Security Vulnerabilities
+User Registration: POST /api/register
+User Login: POST /api/login
+Forgot Password: POST /api/password/forgot
+Reset Password: POST /api/password/reset
+Get Movies: GET /api/movies
+Add Review: POST /api/reviews
+Update Review: PUT /api/reviews/{id}
+Conclusion
+The Movies project showcases my ability to build a full-featured web application using Laravel and Laravel Passport. It demonstrates my understanding of RESTful APIs, user authentication, and database management. I am excited to share this project as part of my application for the Africred technical interview.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Admin panel used : laravel back pack would require data to run thanks  so much.

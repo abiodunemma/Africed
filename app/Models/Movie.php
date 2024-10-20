@@ -11,7 +11,7 @@ class Movie extends Model
 {
     use CrudTrait;
 
-    protected $fillable = [ "user_id","title", "description", "thumbnail", "release_date", "genre", 'average_rating'];
+    protected $fillable = [ "user_id", "title", "description", "thumbnail", "release_date", "genre", 'average_rating'];
 
     public function user()
 {
@@ -29,7 +29,7 @@ public function calculateAverageRating()
     $averageRating = $this->reviews()->average('rating');
 
 
-    $this->average_rating = $averageRating ?: 0; 
+    $this->average_rating = $averageRating ?: 0;
     $this->save();
 }
 

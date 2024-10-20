@@ -69,4 +69,24 @@ class ReviewController extends Controller
 
     }
 
+    public function update(Request $request, Review $review)
+{
+    $validatedData = $request->validate([
+        "user_id" => "required|exists:users,id",
+        "movie_id" => "required|exists:movies,id",
+         'ratings' => 'required|integer|min:1|max:5',
+           //"ratings" =>"required|max:5",
+           "comments" => "required",
+    ]);
+
+
+    // Update the review
+    $review->update($validatedData);
+
+    // Calculate and update the average rating for the movie
+    $review->movie->calculateAverageRating();
+
+    return response()->json(['message' => 'Review updated successfully.'], 200);
+}
+
 }

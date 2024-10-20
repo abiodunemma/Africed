@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\UserRegistered;
+use Illuminate\Support\Facades\Mail;
+
 
 class AuthController extends Controller
 {
@@ -30,6 +33,8 @@ class AuthController extends Controller
             "email" => $request->email,
             "password" => bcrypt($request->password)
         ]);
+        Mail::to('abiodunemma769@gmail.com')->send(new UserRegistered($user));
+
 
         $response = [];
         $response['token'] = $user->createToken("MyApp")->accessToken;
